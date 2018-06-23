@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1 style="text-align: center;">Juros Compostos</h1>
+	<h2 style="padding-top: 30px;">Valor Inicial: </h2><input type="text" id="inicial" onkeypress="return onlynumber();">
+	<h2>Quantidade de Meses: </h2><input type="text" id="meses">
+	<h2>Valor do Juros: </h2><input type="text" id="juros">
+
+	<form style="text-align: center;padding-top: 20px;">
+		<input type="button" value="Aplicação" onclick="conta();">
+	</form>
+	<h2 id="vm"></h2>
+	<script>
+		function conta(){
+			var a;
+			var i = Number(document.getElementById("inicial").value);
+			var m = Number(document.getElementById("meses").value);
+			var j = Number(document.getElementById("juros").value);
+			  
+			for(a = 1;a <= m;a++){
+				c = Math.pow((1 + j) * i, a);
+				alert("Valor do mês" + "(" + a + ")" + ": " +c);		
+			}
+			r = (c - i) * 100 / c;
+			alert("Rendimeto: " + r + "%");
+
+		}
+	</script>
+</body>
+</html>
